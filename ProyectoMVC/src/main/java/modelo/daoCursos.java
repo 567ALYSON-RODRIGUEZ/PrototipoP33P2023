@@ -16,12 +16,12 @@ import java.util.List;
  */
 public class daoCursos {
 
-    private static final String SQL_SELECT = "SELECT codigo_curso, nombre_curso, estatus_curso FROM cursos";
-    private static final String SQL_INSERT = "INSERT INTO cursos(codigo_curso, nombre_curso, estatus_curso) VALUES(?, ?, ?)";
-    private static final String SQL_UPDATE = "UPDATE cursos SET nombre_curso=?, estatus_curso=? WHERE codigo_curso = ?";
-    private static final String SQL_DELETE = "DELETE FROM cursos WHERE codigo_curso=?";
-    private static final String SQL_SELECT_NOMBRE = "SELECT codigo_curso, nombre_curso, estatus_curso FROMt cursos WHERE nombre_curso = ?";
-    private static final String SQL_SELECT_ID = "SELECT codigo_curso, nombre_curso, estatus_curso FROM cursos  WHERE codigo_curso = ?";    
+    private static final String SQL_SELECT = "SELECT codigo_curso, nombre_curso, estatus_curso FROM tbl_cursos";
+    private static final String SQL_INSERT = "INSERT INTO tbl_cursos(codigo_curso, nombre_curso, estatus_curso) VALUES(?, ?, ?)";
+    private static final String SQL_UPDATE = "UPDATE tbl_cursos SET nombre_curso=?, estatus_curso=? WHERE codigo_curso = ?";
+    private static final String SQL_DELETE = "DELETE FROM tbl_cursos WHERE codigo_curso=?";
+    private static final String SQL_SELECT_NOMBRE = "SELECT codigo_curso, nombre_curso, estatus_curso FROM tbl_cursos WHERE nombre_curso = ?";
+    private static final String SQL_SELECT_ID = "SELECT codigo_curso, nombre_curso, estatus_curso FROM tbl_cursos  WHERE codigo_curso = ?";    
 
     public List<clsCursos> consultaCursos() {
         Connection conn = null;
@@ -86,8 +86,8 @@ public class daoCursos {
             System.out.println("ejecutando query: " + SQL_UPDATE);
             stmt = conn.prepareStatement(SQL_UPDATE);
             stmt.setString(1, curso.getNombre_curso());
-            stmt.setString(2,curso.getEstatus_curso());
-            stmt.setString(3,curso.getCodigo_curso());
+            stmt.setString(2, curso.getEstatus_curso());
+            stmt.setString(3, curso.getCodigo_curso());
 
             rows = stmt.executeUpdate();
             System.out.println("Registros actualizado:" + rows);

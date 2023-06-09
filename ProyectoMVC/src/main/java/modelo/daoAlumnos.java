@@ -16,12 +16,12 @@ import java.util.List;
  */
 public class daoAlumnos {
 
-    private static final String SQL_SELECT = "SELECT carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, estatus_alumno FROM siu.alumnos";
-    private static final String SQL_INSERT = "INSERT INTO siu.alumnos(carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, estatus_alumno) VALUES(?, ?, ?, ?, ?, ?)";
-    private static final String SQL_UPDATE = "UPDATE siu.alumnos SET nombre_alumno=?, direccion_alumno=?, telefono_alumno=?, email_alumno=?, estatus_allumno=? WHERE carnet_alumno = ?";
-    private static final String SQL_DELETE = "DELETE FROM siu.alumnos WHERE carnet_alumno=?";
-    private static final String SQL_SELECT_NOMBRE = "SELECT carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, estatus_alumno FROM siu.alumnos WHERE nombre_alumno = ?";
-    private static final String SQL_SELECT_CARNET = "SELECT carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, estatus_alumno FROM siu.alumnos WHERE carnet_alumnos = ?";    
+    private static final String SQL_SELECT = "SELECT carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, estatus_alumno FROM tbl_alumnos";
+    private static final String SQL_INSERT = "INSERT INTO tbl_alumnos(carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, estatus_alumno) VALUES(?, ?, ?, ?, ?, ?)";
+    private static final String SQL_UPDATE = "UPDATE tbl_alumnos SET nombre_alumno=?, direccion_alumno=?, telefono_alumno=?, email_alumno=?, estatus_allumno=? WHERE carnet_alumno = ?";
+    private static final String SQL_DELETE = "DELETE FROM tbl_alumnos WHERE carnet_alumno=?";
+    private static final String SQL_SELECT_NOMBRE = "SELECT carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, estatus_alumno FROM tbl_alumnos WHERE nombre_alumno = ?";
+    private static final String SQL_SELECT_CARNET = "SELECT carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, estatus_alumno FROM tbl_alumnos WHERE carnet_alumnos = ?";    
 
     public List<clsAlumnos> consultaAlumnos() {
         Connection conn = null;

@@ -16,12 +16,12 @@ import java.util.List;
  */
 public class daoJornadas {
 
-    private static final String SQL_SELECT = "SELECT codigo_jornada, nombre_jornada, estatus_jornada FROM jornadas";
-    private static final String SQL_INSERT = "INSERT INTO jornadas(codigo_jornada,nombre_jornada, estatus_jornada) VALUES(?, ?, ?)";
-    private static final String SQL_UPDATE = "UPDATE jornadas SET nombre_jornada=?, estatus_jornada=? WHERE codigo_jornada = ?";
-    private static final String SQL_DELETE = "DELETE FROM jornadas WHERE codigo_jornada=?";
-    private static final String SQL_SELECT_NOMBRE = "SELECT codigo_jornada, nombre_jornada, estatus_jornada FROM jornadas WHERE nombre_jornada = ?";
-    private static final String SQL_SELECT_ID = "SELECT codigo_jornada, nombre_jornada, estatus_jornada FROM jornadas  WHERE codigo_jornada = ?";    
+    private static final String SQL_SELECT = "SELECT codigo_jornada, nombre_jornada, estatus_jornada FROM tbl_jornadas";
+    private static final String SQL_INSERT = "INSERT INTO tbl_jornadas(codigo_jornada,nombre_jornada, estatus_jornada) VALUES(?, ?, ?)";
+    private static final String SQL_UPDATE = "UPDATE tbl_jornadas SET nombre_jornada=?, estatus_jornada=? WHERE codigo_jornada = ?";
+    private static final String SQL_DELETE = "DELETE FROM tbl_jornadas WHERE codigo_jornada=?";
+    private static final String SQL_SELECT_NOMBRE = "SELECT codigo_jornada, nombre_jornada, estatus_jornada FROM tbl_jornadas WHERE nombre_jornada = ?";
+    private static final String SQL_SELECT_ID = "SELECT codigo_jornada, nombre_jornada, estatus_jornada FROM tbl_jornadas  WHERE codigo_jornada = ?";    
 
     public List<clsJornadas> consultaJornadas() {
         Connection conn = null;

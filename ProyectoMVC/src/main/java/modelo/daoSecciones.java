@@ -16,12 +16,12 @@ import java.util.List;
  */
 public class daoSecciones {
 
-    private static final String SQL_SELECT = "SELECT codigo_seccion, nombre_seccion, estatus_seccion FROM secciones";
-    private static final String SQL_INSERT = "INSERT INTO secciones(codigo_seccion, nombre_seccion, estatus_seccion) VALUES(?, ?, ?)";
-    private static final String SQL_UPDATE = "UPDATE secciones SET nombre_seccion=?, estatus_seccion=? WHERE codigo_seccion = ?";
-    private static final String SQL_DELETE = "DELETE FROM secciones WHERE codigo_seccion=?";
-    private static final String SQL_SELECT_NOMBRE = "SELECT codigo_seccion, nombre_seccion, estatus_seccion FROM secciones WHERE nombre_seccion = ?";
-    private static final String SQL_SELECT_ID = "SELECT codigo_seccion, nombre_seccion, estatus_seccion FROM secciones WHERE codigo_seccion = ?";    
+    private static final String SQL_SELECT = "SELECT codigo_seccion, nombre_seccion, estatus_seccion FROM tbl_secciones";
+    private static final String SQL_INSERT = "INSERT INTO tbl_secciones(codigo_seccion, nombre_seccion, estatus_seccion) VALUES(?, ?, ?)";
+    private static final String SQL_UPDATE = "UPDATE tbl_secciones SET nombre_seccion=?, estatus_seccion=? WHERE codigo_seccion = ?";
+    private static final String SQL_DELETE = "DELETE FROM tbl_secciones WHERE codigo_seccion=?";
+    private static final String SQL_SELECT_NOMBRE = "SELECT codigo_seccion, nombre_seccion, estatus_seccion FROM tbl_secciones WHERE nombre_seccion = ?";
+    private static final String SQL_SELECT_ID = "SELECT codigo_seccion, nombre_seccion, estatus_seccion FROM tbl_secciones WHERE codigo_seccion = ?";    
 
     public List<clsSecciones> consultaSecciones() {
         Connection conn = null;

@@ -17,7 +17,7 @@ import java.util.List;
 public class daoAplicaciones {
 
     private static final String SQL_SELECT = "SELECT aplid, aplnombre, aplestatus FROM tbl_aplicaciones";
-    private static final String SQL_INSERT = "INSERT INTO tbl_aplicaciones(aplnombre, aplestatus) VALUES(?, ?)";
+    private static final String SQL_INSERT = "INSERT INTO tbl_aplicaciones(aplid, aplnombre, aplestatus) VALUES(?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE tbl_aplicaciones SET aplnombre=?, aplestatus=? WHERE aplid = ?";
     private static final String SQL_DELETE = "DELETE FROM tbl_aplicaciones WHERE aplid=?";
     private static final String SQL_SELECT_NOMBRE = "SELECT aplid, aplnombre, aplestatus FROM tbl_aplicaciones WHERE aplnombre = ?";
@@ -60,8 +60,9 @@ public class daoAplicaciones {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
-            stmt.setString(1, aplicaciones.getNombreAplicaciones());
-            stmt.setString(2, aplicaciones.getEstatusAplicacion());
+            stmt.setInt(1, aplicaciones.getIdAplicaciones());
+            stmt.setString(2, aplicaciones.getNombreAplicaciones());
+            stmt.setString(3, aplicaciones.getEstatusAplicacion());
 
             System.out.println("ejecutando query:" + SQL_INSERT);
             rows = stmt.executeUpdate();
